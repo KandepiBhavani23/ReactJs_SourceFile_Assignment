@@ -43,12 +43,10 @@ const router = createBrowserRouter([
 			{
 				path: "/posts/:id",
 				element: <PostsDetails />,
-				children: [
-					{
-						path: "comments",
-						element: <PostsComments />,
-					},
-				],
+			},
+			{
+				path: "/posts/:id/comments",
+				element: <PostsComments />,
 			},
 			{
 				path: "/contact",

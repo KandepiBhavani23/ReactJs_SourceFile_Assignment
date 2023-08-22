@@ -20,12 +20,15 @@ const Posts = () => {
 			</h1>
 			<div className="grid grid-cols-3 gap-4 py-10 mx-10">
 				{posts?.map((posts) => (
-					<Link to={"/posts/" + posts.id} key={posts.id}>
-						<div className="shadow-md py-5  border-2 border-pink-500 rounded-md w-[350px] p-5 ">
-							<h1 className="font-bold py-3">Number - {posts.id}</h1>
-							<p>{posts.title}</p>
-						</div>
-					</Link>
+					<div className="shadow-md py-5  border-2 border-pink-500 rounded-md w-[350px] p-5 ">
+						<h1 className="font-bold py-3">Number - {posts.id}</h1>
+						<p>{posts.title}</p>
+						<Link to={"/posts/" + posts.id} key={posts.id}>
+							<button className="bg-sky-600 my-3 px-2 py-2 rounded-md text-white">
+								Know More
+							</button>
+						</Link>
+					</div>
 				))}
 			</div>
 		</div>

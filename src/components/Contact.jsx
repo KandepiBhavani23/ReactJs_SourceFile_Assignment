@@ -27,23 +27,30 @@ function ContactForm() {
 	const validateForm = () => {
 		const newErrors = {};
 		if (!formData.firstName) newErrors.firstName = "First Name is required";
+
 		if (!formData.lastName) newErrors.lastName = "Last Name is required";
+
 		if (!formData.email) newErrors.email = "Email is required";
 		else if (!/^\S+@\S+\.\S+$/.test(formData.email))
 			newErrors.email = "Invalid email format";
+
 		if (!formData.phoneNumber)
 			newErrors.phoneNumber = "Phone Number is required";
 		else if (!/^\d{10}$/.test(formData.phoneNumber))
 			newErrors.phoneNumber = "Phone Number should be 10 digits";
+
 		if (!formData.pincode) newErrors.pincode = "Pin Code is required";
 		else if (!/^\d{6}$/.test(formData.pincode))
 			newErrors.pincode = "Pin Code should be 6 digits";
+
 		if (!formData.dob) newErrors.dob = "Date of Birth is required";
 		else if (new Date(formData.dob) >= new Date())
 			newErrors.dob = "Date of Birth should be a past date";
+
 		if (!formData.address) newErrors.address = "Address is required";
 		else if (formData.address.length > 150)
 			newErrors.address = "Address should be less than 150 characters";
+
 		setErrors(newErrors);
 		return Object.keys(newErrors).length === 0;
 	};
